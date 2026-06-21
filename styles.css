@@ -63,11 +63,19 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  min-width: max-content;
+  max-width: min(44vw, 210px);
   color: var(--text);
   font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 28px;
+  object-fit: contain;
 }
 
 .brand-mark {
@@ -624,6 +632,10 @@ p {
 
   .header-action {
     padding-inline: 13px;
+  }
+
+  .brand {
+    max-width: 172px;
   }
 
   .hero-actions,
