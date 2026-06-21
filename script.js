@@ -1,4 +1,4 @@
-const DISCORD_CLIENT_ID = "PASTE_DISCORD_CLIENT_ID_HERE";
+const DISCORD_CLIENT_ID = "1518121387573645312";
 const DISCORD_API_BASE = "https://discord.com/api/v10";
 
 const pendingLinks = document.querySelectorAll('a[href="#"]');
