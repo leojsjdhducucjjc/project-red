@@ -363,17 +363,18 @@ p {
 .launch-art {
   position: relative;
   display: grid;
-  place-items: center;
+  align-items: center;
   min-height: 360px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .launch-art span {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  font-size: clamp(3.6rem, 9vw, 8rem);
-  line-height: 0.84;
+  display: block;
+  max-width: min(100%, 640px);
+  font-size: clamp(3.1rem, 7.2vw, 6.8rem);
+  line-height: 0.9;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -640,6 +641,10 @@ p {
 
   .launch-art {
     min-height: 270px;
+  }
+
+  .launch-art span {
+    font-size: clamp(2.55rem, 14vw, 4.1rem);
   }
 
   .cube-face {
