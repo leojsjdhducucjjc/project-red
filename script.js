@@ -169,15 +169,6 @@ function applyRedTreatment(discordId) {
   ctx.fillRect(0, 0, size, size);
 
   ctx.globalCompositeOperation = "source-over";
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.82)";
-  ctx.lineWidth = 8;
-  ctx.strokeRect(18, 18, size - 36, size - 36);
-
-  ctx.strokeStyle = "rgba(255, 59, 52, 0.92)";
-  ctx.lineWidth = 18;
-  ctx.strokeRect(34, 34, size - 68, size - 68);
-
-  ctx.globalCompositeOperation = "source-over";
 }
 
 function renderAvatar(discordId = lastRenderId) {
