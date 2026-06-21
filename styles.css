@@ -415,12 +415,43 @@ p {
 
 .text-link {
   display: inline-flex;
-  margin-top: 10px;
+  margin-top: 20px;
   color: var(--text);
   font-size: 1.08rem;
   font-weight: 900;
   border-bottom: 2px solid var(--red);
   padding-bottom: 6px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 26px 0 4px;
+}
+
+.countdown-card {
+  display: grid;
+  gap: 4px;
+  min-height: 92px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 14px 10px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.countdown-card strong {
+  color: var(--text);
+  font-size: clamp(1.85rem, 4vw, 3.2rem);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.countdown-card span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .cta {
@@ -662,5 +693,9 @@ p {
   .cube-face {
     width: 150px;
     height: 150px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

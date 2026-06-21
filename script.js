@@ -1,7 +1,14 @@
 const DISCORD_CLIENT_ID = "1518121387573645312";
 const DISCORD_API_BASE = "https://discord.com/api/v10";
+const LAUNCH_DATE = new Date("2026-08-21T00:00:00-04:00");
 
 const pendingLinks = document.querySelectorAll('a[href="#"]');
+const countdownValues = {
+  days: document.querySelector('[data-countdown-value="days"]'),
+  hours: document.querySelector('[data-countdown-value="hours"]'),
+  minutes: document.querySelector('[data-countdown-value="minutes"]'),
+  seconds: document.querySelector('[data-countdown-value="seconds"]'),
+};
 const discordLogin = document.querySelector("#discord-login");
 const discordLogout = document.querySelector("#discord-logout");
 const avatarUpload = document.querySelector("#avatar-upload");
@@ -25,6 +32,28 @@ pendingLinks.forEach((link) => {
 
 function setStatus(message) {
   statusText.textContent = message;
+}
+
+function padTime(value) {
+  return String(value).padStart(2, "0");
+}
+
+function updateCountdown() {
+  if (!countdownValues.days) {
+    return;
+  }
+
+  const remaining = Math.max(0, LAUNCH_DATE.getTime() - Date.now());
+  const totalSeconds = Math.floor(remaining / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  countdownValues.days.textContent = String(days).padStart(2, "0");
+  countdownValues.hours.textContent = padTime(hours);
+  countdownValues.minutes.textContent = padTime(minutes);
+  countdownValues.seconds.textContent = padTime(seconds);
 }
 
 function getRedirectUri() {
@@ -294,4 +323,6 @@ downloadButton.addEventListener("click", () => {
 });
 
 parseOAuthRedirect();
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
 loadDiscordProfile();
