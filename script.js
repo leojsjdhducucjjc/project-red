@@ -177,21 +177,7 @@ function applyRedTreatment(discordId) {
   ctx.lineWidth = 18;
   ctx.strokeRect(34, 34, size - 68, size - 68);
 
-  ctx.fillStyle = "rgba(5, 5, 5, 0.78)";
-  ctx.fillRect(0, size - 86, size, 86);
-
-  ctx.fillStyle = "#ff3b34";
-  ctx.font = "900 32px Inter, Arial, sans-serif";
-  ctx.textAlign = "left";
-  ctx.textBaseline = "middle";
-  ctx.fillText("PROJECT RED", 28, size - 48);
-
-  if (discordId) {
-    ctx.fillStyle = "rgba(255, 246, 241, 0.78)";
-    ctx.font = "700 18px Inter, Arial, sans-serif";
-    ctx.textAlign = "right";
-    ctx.fillText(`#${discordId.slice(-6)}`, size - 28, size - 48);
-  }
+  ctx.globalCompositeOperation = "source-over";
 }
 
 function renderAvatar(discordId = lastRenderId) {
