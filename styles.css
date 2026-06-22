@@ -62,28 +62,22 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  max-width: min(44vw, 210px);
+  gap: 14px;
+  min-width: max-content;
   color: var(--text);
   font-weight: 900;
+  font-size: clamp(1.18rem, 2vw, 1.62rem);
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.brand img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 28px;
-  object-fit: contain;
-}
-
 .brand-mark {
-  width: 16px;
-  height: 16px;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
   border-radius: 50%;
   background: var(--red);
-  box-shadow: 0 0 0 5px rgba(255, 59, 52, 0.12), 0 0 28px var(--shadow);
+  box-shadow: 0 0 0 10px rgba(255, 59, 52, 0.16), 0 0 28px var(--shadow);
 }
 
 .nav-links {
@@ -663,10 +657,6 @@ p {
 
   .header-action {
     padding-inline: 13px;
-  }
-
-  .brand {
-    max-width: 172px;
   }
 
   .hero-actions,
